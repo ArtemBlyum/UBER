@@ -1,0 +1,209 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  position: relative;
+}
+
+nav {
+  position: fixed; /* ставим меню в фиксированое положение */
+  width: 100%;
+  height: 50px;
+  background-color: #212121;
+  z-index: 1; /* устанавливаем меню в положение над subheader */
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 70px;
+  margin: 0;
+  list-style-type: none; /* убираем точки в элементах списка */
+}
+
+.menu .menu_link {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.menu .menu_item { /* разделитель между кнопками меню */
+  border-right: 2px dotted black;   
+  padding-right: 28px;
+}
+
+.subheader {
+  position: absolute;
+  top: 50px; /* смещаем элемент на 50 px от верхнего края header, что бы небыло нахлеста с навигационным меню, так как он дочка header у которого значение position: relative */
+  width: 100%;
+  height: 84px;
+  background-color: rgba(0,0,0, .6); /* пример альфаканала */
+}
+
+.subheader .subheader_logo {
+  display: block; /* ссылка-строчный элемент, для них margin не работает. Поэтому делаем его блочным display: block; */
+  max-width: 100%; /* при измении или увеличии лого, максимальный размер который он может занимать */
+  margin-top: 16px;
+}
+
+.subheader .subheader_official { /* стилизуем текст логотипа */
+  margin-top: 6px;
+  opacity: 0.5;
+  font-size: 13px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.subheader .subheader_call {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 19px;
+  text-align: right;
+}
+
+.subheader .subheader_phone {
+  display: block;
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 12px;
+  text-decoration: none; /* убрать подчеркивания в ссылке */
+}
+
+.subheader .subheader_btn { /* стилизуем кнопку */
+  width: 172px;
+  height: 46px;
+  margin-top: 19px;
+  box-shadow: inset 0px -3px 0 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 4px; /* закругление кнопки */
+  background-image: linear-gradient(to top, #1eacc7, #4ce2ff);
+  /* стилизуем текст кнопки */
+  text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.21);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.promo {
+  min-height: 800px;
+  background: url(../img/back_ground1.jpg) center center/cover no-repeat;
+  padding: 150px 0 135px 0;
+}
+
+.promo .promo_header {
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 60px;
+  margin: 0;
+  text-align: center;
+}
+
+.promo .promo_subheader {
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 36px;
+  margin: 0;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.promo .promo_descript {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.promo .promo_btn { /* стилизация кнопки */
+  display: block;
+  margin: 118px auto 0 auto;
+  width: 259px;
+  height: 63px;
+  box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 4px;
+  background-image: linear-gradient(to top, #1eacc7, #4ce2ff);
+  /* текст кнопки */
+  text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.21);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.reasons {
+  padding: 71px 0 65px 0;
+}
+
+.label { /* табличка "преимущества" */
+  width: 112px;
+  height: 24px;
+  margin: auto; /* внешние отступы */
+  padding: 5px 12px; /* сверзу и снизу отступ 5px, слева и справа отступ 12px */
+  background-color: #000000;
+  /* текст внутри */
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase; /* Все символы текста становятся прописными (верхний регистр) */
+}
+
+.title { /* заголовок "8 причин начать работать с нами" */
+  margin-bottom: 0; /* величину отступа от нижнего края элемента */
+  margin-top: 38px; /* отступа от верхнего края элемента, увеличиваем отступ от таблички "преимущества" */
+  color: #222222;
+  font-size: 38px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center; /* расположение заголовка по центру */
+}
+
+.reasons .reasons_block { /* описание причин и иконки */
+  display: flex; /* по умолчанию горизонт слева на право */
+  justify-content: center; /* элементы будут выравнивать по центру главной оси*/
+  align-items: center; /* блоки расположены в центре вертикальной (поперечной оси) */
+  margin-top: 35px; /* отступ сверху */
+}
+
+.reasons .reasons_block .reasons_round { /* кружки вокруг иконок "причин" */
+  display: flex; /* по умолчанию горизонт слева на право */ 
+  justify-content: center; /* элементы будут выравнивать по центру главной оси*/ 
+  align-items: center; /* блоки расположены в центре вертикальной (поперечной оси) это нужно чтобы изображение не расплывалось*/
+  margin-right: 26px; /* отступ от описания */
+  width: 113px; /* задаем ширину рамки */
+  height: 113px; /* задаем высоту рамки */
+  background-color: #1eacc7;
+  border-radius: 100%; /* Устанавливает радиус скругления уголков рамки. */
+}
+
+.reasons .reasons_block .reasons_descr { /* блок с описание причин */
+  width: 343px; /* задаем определенную ширину для блока, что бы у нас не поехала структура */
+}
+
+.reasons .reasons_block .reasons_descr .reasons_subtitle{ /* заголовок причины */
+  line-height: 21px; /* устанавиваем межстрочный интервал текста */
+  color: #1eacc7;
+  font-size: 17px; 
+  font-weight: 400;
+}
+
+.reasons .reasons_block .reasons_descr .reasons_text { /* описание причины */
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 21px; /* устанавиваем межстрочный интервал текста */
+}
